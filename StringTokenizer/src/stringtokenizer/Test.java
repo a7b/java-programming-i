@@ -22,6 +22,8 @@ public class Test {
         System.out.print("Nhap chuoi: ");
         String str = input.nextLine();
         StringTokenizer stk = new StringTokenizer(str, " !,;:.?", true);
+        //StringTokenizer stk = new StringTokenizer(str, " !,;:.?");
+        //Kiem so sanh 2 ham nay
         System.out.println("\"" + str + "\"");
         System.out.println("So tu trong chuoi nhap: " + stk.countTokens());
         System.out.println("In moi tu trong chuoi tren mot dong: ");
