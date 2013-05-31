@@ -8,6 +8,10 @@ import laptop.HPLaptop;
  *
  * @author TQNINH
  */
+class CheckNode extends Exception{
+    
+}
+
 public class TestLaptop {
     final int maxLaptop = 1;
     int nextLaptop = 0;
@@ -59,26 +63,31 @@ public class TestLaptop {
         Scanner scr = new Scanner(System.in);
         
         while(true){
-            System.out.println("   -- MENU --");
-            System.out.println("   1. Add Laptop");
-            System.out.println("   2. Display the thin-Laptops");
-            System.out.println("   3. Exit");
-            System.out.print("   Enter choice (1-2): ");
-            
-            node = scr.nextInt();
-            switch(node){
-                case 1:
-                    System.out.println("  ADD LAPTOP");
-                    addLaptop();
-                    break;
-                case 2:
-                    System.out.println("  THE THIN-LAPTOP");
-                    displayThinLaptop();
-                    break;
-                case 3:
-                    System.exit(0);
-                default:
-                     System.out.println("System Message -> Invalid choice!");
+            try{
+                System.out.println("   -- MENU --");
+                System.out.println("   1. Add Laptop");
+                System.out.println("   2. Display the thin-Laptops");
+                System.out.println("   3. Exit");
+                System.out.print("   Enter choice (1-2): ");
+
+                node = scr.nextInt();
+                switch(node){
+                    case 1:
+                        System.out.println("  ADD LAPTOP");
+                        addLaptop();
+                        break;
+                    case 2:
+                        System.out.println("  THE THIN-LAPTOP");
+                        displayThinLaptop();
+                        break;
+                    case 3:
+                        System.exit(0);
+                    default:
+                        throw new CheckNode();
+                }
+            }catch(Exception e){
+                System.out.println("System Message -> Enter integer from 1-3.");
+                scr.nextLine();
             }
         }
     }

@@ -1,0 +1,2 @@
+hp.HPComputer
+hp.CheckWeight
