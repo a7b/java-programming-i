@@ -1,2 +1,0 @@
-UnitedBankAccoount.AccountTest
-UnitedBankAccoount.Account
