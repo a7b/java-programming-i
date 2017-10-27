@@ -17,6 +17,49 @@ public class BookTest {
     {
         bookCount = 0;
     }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        byte numberOfBooks = Byte.parseByte(args[0]);
+        BookTest objRepository = new BookTest();
+        objRepository.books = new Book[numberOfBooks];
+        Scanner input = new Scanner(System.in);
+        int choice;
+        do
+        {
+            System.out.println("\nWelcome to E-Repository.\n" +
+                    "Select the operation you want to perform:");
+            System.out.println("*******************************************");
+            System.out.println("1. Add book to the repository");
+            System.out.println("2. Search book by book name");
+            System.out.println("3. Display books");
+            System.out.println("4. Exit");
+            System.out.println("*******************************************");
+            System.out.print("Choice: ");
+            choice = input.nextInt();
+            
+            switch(choice)
+            {
+                case 1:
+                    objRepository.addBooks();
+                    break;
+                case 2:
+                    objRepository.searchByBookName();
+                    break;
+                case 3:
+                    objRepository.displayBooks();
+                    break;
+                case 4:
+                    break;
+                default:
+                    System.out.println("Not a valid choice");
+            }
+        }while(choice != 4);
+    }
+    
     void addBooks()
     {
         Scanner input = new Scanner(System.in);
@@ -106,45 +149,4 @@ public class BookTest {
         }
     }
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-        byte numberOfBooks = Byte.parseByte(args[0]);
-        BookTest objRepository = new BookTest();
-        objRepository.books = new Book[numberOfBooks];
-        Scanner input = new Scanner(System.in);
-        int choice;
-        do
-        {
-            System.out.println("\nWelcome to E-Repository.\n" +
-                    "Select the operation you want to perform:");
-            System.out.println("*******************************************");
-            System.out.println("1. Add book to the repository");
-            System.out.println("2. Search book by book name");
-            System.out.println("3. Display books");
-            System.out.println("4. Exit");
-            System.out.println("*******************************************");
-            System.out.print("Choice: ");
-            choice = input.nextInt();
-            
-            switch(choice)
-            {
-                case 1:
-                    objRepository.addBooks();
-                    break;
-                case 2:
-                    objRepository.searchByBookName();
-                    break;
-                case 3:
-                    objRepository.displayBooks();
-                    break;
-                case 4:
-                    break;
-                default:
-                    System.out.println("Not a valid choice");
-            }
-        }while(choice != 4);
-    }
 }
